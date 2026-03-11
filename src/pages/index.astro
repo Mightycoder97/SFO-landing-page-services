@@ -1,11 +1,225 @@
 ---
-import Welcome from '../components/Welcome.astro';
 import Layout from '../layouts/Layout.astro';
+import ServiceCard from '../components/ServiceCard.astro';
+import CTA from '../components/CTA.astro';
 
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+const featuredServices = [
+  {
+    title: "Detección de Fugas",
+    description: "Ubicamos y reparamos filtraciones ocultas sin romper de más, utilizando tecnología moderna.",
+    icon: "ph ph-magnifying-glass-plus",
+    slug: "fugas"
+  },
+  {
+    title: "Desatoro de Tuberías",
+    description: "Eliminamos cualquier obstrucción en inodoros, lavaderos y redes principales rápidamente.",
+    icon: "ph ph-pipe",
+    slug: "desatoro"
+  },
+  {
+    title: "Instalación de Termas",
+    description: "Instalamos y reparamos termas eléctricas, a gas y solares con total garantía de seguridad.",
+    icon: "ph ph-thermometer-hot",
+    slug: "termas"
+  },
+  {
+    title: "Bombas de Agua",
+    description: "Mantenimiento e instalación de sistemas hidroneumáticos para presión constante.",
+    icon: "ph ph-engine",
+    slug: "bombas"
+  }
+];
 ---
 
-<Layout>
-	<Welcome />
+<Layout title="Inicio">
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="hero-bg"></div>
+    <div class="container hero-content animate-fade-in">
+      <span class="badge">Sede Nacional en Juliaca</span>
+      <h1>El mejor servicio de <span class="text-primary text-highlight">Gasfitería</span> a tu alcance</h1>
+      <p class="hero-desc">Soluciones rápidas y efectivas para hogares y empresas. Desde reparaciones de emergencia hasta instalaciones complejas de fontanería.</p>
+      <div class="hero-actions">
+        <a href="/servicios" class="btn btn-primary btn-lg">Ver Servicios</a>
+        <a href="/contacto" class="btn btn-outline btn-lg text-white border-white">Llamar Ahora</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Features Section -->
+  <section class="section bg-subtle">
+    <div class="container">
+      <div class="features-grid grid grid-cols-3">
+        <div class="feature-card text-center">
+          <div class="feature-icon"><i class="ph ph-clock-counter-clockwise"></i></div>
+          <h3>Atención 24/7</h3>
+          <p class="text-light">Emergencias no avisan. Nuestro equipo está listo para atenderte en cualquier momento.</p>
+        </div>
+        <div class="feature-card text-center">
+          <div class="feature-icon"><i class="ph ph-shield-check"></i></div>
+          <h3>Trabajo Garantizado</h3>
+          <p class="text-light">Técnicos calificados y materiales de primera calidad aseguran un resultado duradero.</p>
+        </div>
+        <div class="feature-card text-center">
+          <div class="feature-icon"><i class="ph ph-map-pin-line"></i></div>
+          <h3>Cobertura Nacional</h3>
+          <p class="text-light">Nuestra base está en Juliaca, pero atendemos proyectos y emergencias en todo el Perú.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Featured Services -->
+  <section class="section">
+    <div class="container">
+      <div class="section-header text-center mb-12">
+        <h2 class="title-lg">Nuestros Servicios <span class="highlight">Destacados</span></h2>
+        <p class="text-light max-w-2xl mx-auto">Solucionamos cualquier problema de gasfitería con rapidez y profesionalismo.</p>
+      </div>
+      
+      <div class="grid grid-cols-4">
+        {featuredServices.map(service => (
+          <ServiceCard {...service} />
+        ))}
+      </div>
+      
+      <div class="text-center mt-12">
+        <a href="/servicios" class="btn btn-outline">Ver todos los servicios &rarr;</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Call to Action -->
+  <CTA />
 </Layout>
+
+<style>
+  .hero {
+    position: relative;
+    padding: 8rem 0;
+    overflow: hidden;
+    color: white;
+    min-height: 80vh;
+    display: flex;
+    align-items: center;
+  }
+
+  .hero-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    /* Dark aesthetic background with deep blue/grey gradient */
+    background: linear-gradient(to right, rgba(15, 23, 42, 0.95), rgba(15, 23, 42, 0.8)), url('https://images.unsplash.com/photo-1585704032915-c3400ca199e7?q=80&w=2070&auto=format&fit=crop') center/cover;
+    z-index: -1;
+  }
+
+  .hero-content {
+    max-width: 800px;
+  }
+
+  .badge {
+    display: inline-block;
+    background-color: rgba(245, 188, 24, 0.2);
+    color: var(--color-secondary);
+    padding: 0.5rem 1rem;
+    border-radius: 2rem;
+    font-size: 0.875rem;
+    font-weight: 600;
+    margin-bottom: 1.5rem;
+    border: 1px solid rgba(245, 188, 24, 0.4);
+  }
+
+  h1 {
+    font-size: clamp(3rem, 6vw, 4.5rem);
+    color: white;
+    margin-bottom: 1.5rem;
+  }
+
+  .text-highlight {
+    color: var(--color-primary);
+  }
+
+  .hero-desc {
+    font-size: 1.25rem;
+    opacity: 0.9;
+    margin-bottom: 2.5rem;
+    line-height: 1.6;
+    max-width: 650px;
+  }
+
+  .hero-actions {
+    display: flex;
+    gap: 1rem;
+  }
+  
+  .btn-lg {
+    padding: 1rem 2rem;
+    font-size: 1.125rem;
+  }
+  
+  .border-white {
+    border-color: rgba(255, 255, 255, 0.5);
+  }
+
+  .border-white:hover {
+    background-color: white;
+    color: var(--color-text-dark);
+  }
+
+  /* Features */
+  .bg-subtle {
+    background-color: var(--color-bg-subtle);
+  }
+
+  .feature-card {
+    background-color: white;
+    padding: 3rem 2rem;
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-sm);
+    transition: transform 0.3s ease;
+  }
+
+  .feature-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-md);
+  }
+
+  .feature-icon {
+    width: 4rem;
+    height: 4rem;
+    margin: 0 auto 1.5rem;
+    background-color: rgba(63, 87, 181, 0.1);
+    color: var(--color-secondary);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+  }
+
+  .title-lg {
+    font-size: clamp(2rem, 4vw, 2.5rem);
+  }
+
+  .mb-12 { margin-bottom: 3rem; }
+  .mt-12 { margin-top: 3rem; }
+  .max-w-2xl { max-width: 42rem; }
+  .mx-auto { margin-left: auto; margin-right: auto; }
+
+  @media (max-width: 768px) {
+    .hero-actions {
+      flex-direction: column;
+    }
+    .hero {
+      padding: 6rem 0;
+      text-align: center;
+    }
+    .hero-content {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+  }
+</style>
