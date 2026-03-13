@@ -1,80 +1,93 @@
 ---
-import { Image } from 'astro:assets';
-import Layout from '../layouts/Layout.astro';
-import FloatingContact from '../components/FloatingContact.astro';
-import trampaGrasaImg from '../assets/img/trampa_grasa.jpeg';
+import { Image } from "astro:assets";
+import Layout from "../layouts/Layout.astro";
+import FloatingContact from "../components/FloatingContact.astro";
+import trampaGrasaImg from "../assets/img/trampa_grasa.jpeg";
 
-const phoneNumber = "51907526005";
-const displayPhone = "+51 907 526 005";
-const whatsappMessage = "Hola! Vengo de la página web y necesito un servicio de gasfitería.";
+const phoneNumber = "907526005";
+const displayPhone = "907 526 005";
+const whatsappMessage =
+  "Hola! Vengo de la página web y necesito un servicio de gasfitería urgente!.";
 
 const faqSchema = {
   "@context": "https://schema.org",
   "@type": "FAQPage",
-  "mainEntity": [
+  mainEntity: [
     {
       "@type": "Question",
-      "name": "¿Atienden emergencias de gasfitería las 24 horas en Juliaca?",
-      "acceptedAnswer": {
+      name: "¿Atienden emergencias de gasfitería las 24 horas en Juliaca?",
+      acceptedAnswer: {
         "@type": "Answer",
-        "text": "Sí, brindamos servicio de gasfitería de emergencia las 24 horas del día, los 7 días de la semana en toda la ciudad de Juliaca y alrededores."
-      }
+        text: "Sí, brindamos servicio de gasfitería de emergencia las 24 horas del día, los 7 días de la semana en toda la ciudad de Juliaca y alrededores.",
+      },
     },
     {
       "@type": "Question",
-      "name": "¿Qué servicios de gasfitería ofrecen en Juliaca?",
-      "acceptedAnswer": {
+      name: "¿Qué servicios de gasfitería ofrecen en Juliaca?",
+      acceptedAnswer: {
         "@type": "Answer",
-        "text": "Ofrecemos una amplia gama de servicios que incluyen detección de fugas, desatoro de desagües, instalación de termas, mantenimiento de electrobombas, instalaciones de agua y desagüe, y más."
-      }
+        text: "Ofrecemos una amplia gama de servicios que incluyen detección de fugas, desatoro de desagües, instalación de termas, mantenimiento de electrobombas, instalaciones de agua y desagüe, y más.",
+      },
     },
     {
       "@type": "Question",
-      "name": "¿Cuál es el tiempo de respuesta para un servicio en Juliaca?",
-      "acceptedAnswer": {
+      name: "¿Cuál es el tiempo de respuesta para un servicio en Juliaca?",
+      acceptedAnswer: {
         "@type": "Answer",
-        "text": "Nuestro tiempo de respuesta promedio en Juliaca es de 20 a 40 minutos, dependiendo de su ubicación exacta."
-      }
-    }
-  ]
+        text: "Nuestro tiempo de respuesta promedio en Juliaca es de 20 a 40 minutos, dependiendo de su ubicación exacta.",
+      },
+    },
+  ],
 };
 ---
 
-<Layout 
+<Layout
   title="Gasfitero Juliaca - Servicio Inmediato 24/7"
   description="Gasfitero en Juliaca con atención inmediata para emergencias. Servicio profesional garantizado. Contáctanos ahora por WhatsApp o teléfono."
   hideHeader
 >
-  <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} slot="head" />
+  <script
+    type="application/ld+json"
+    set:html={JSON.stringify(faqSchema)}
+    slot="head"
+  ></script>
   <!-- Hero Section -->
   <section class="hero">
     <div class="hero-bg"></div>
     <div class="container hero-content animate-fade-in">
       <span class="badge">Servicio 24/7 en Juliaca y Todo el Perú</span>
       <h1>
-        <span class="text-white">Gasfitería en </span>
+        <span class="text-white">Gasfitería en</span>
         <span class="text-gradient">Juliaca</span>
         <span class="text-white"> Servicio Inmediato</span>
       </h1>
-      <p class="hero-desc">Los mejores gasfiteros en Juliaca para atender tus emergencias las 24 horas. Llama ahora al <strong>{displayPhone}</strong> para el mejor servicio técnico de Juliaca.</p>
-      
+      <p class="hero-desc">
+        Los mejores gasfiteros en todo Juliaca, atendemos tus emergencias las 24
+        horas. Telefono <strong>{displayPhone}</strong> para el mejor servicio técnico
+        de Juliaca.
+      </p>
+
       <!-- Contact Buttons -->
       <div class="contact-actions">
-        <a 
-          href={`https://wa.me/${phoneNumber}?text=${encodeURIComponent(whatsappMessage)}`} 
-          target="_blank" 
-          rel="noopener noreferrer" 
+        <a
+          href={`https://wa.me/${phoneNumber}?text=${encodeURIComponent(
+            whatsappMessage
+          )}`}
+          target="_blank"
+          rel="noopener noreferrer"
           class="btn btn-whatsapp btn-lg contact-wa"
         >
           Escribir al WhatsApp
         </a>
-        <a 
-          href={`tel:+${phoneNumber}`} 
+        <a
+          href={`tel:+${phoneNumber}`}
           class="btn btn-secondary btn-lg contact-phone"
         >
           Teléfono: {displayPhone}
         </a>
-        <p class="contact-phone-sub">Atención en todo Juliaca: {displayPhone}</p>
+        <p class="contact-phone-sub">
+          Atención en todo Juliaca: {displayPhone}
+        </p>
       </div>
     </div>
   </section>
@@ -83,31 +96,48 @@ const faqSchema = {
   <section id="beneficios" class="section bg-subtle">
     <div class="container">
       <h2 class="title-lg text-center">¿Por qué contactarnos?</h2>
-      <p class="text-light max-w-2xl mx-auto">Nuestro servicio está diseñado para resolver tus problemas de gasfitería de forma rápida y profesional.</p>
-      
+      <p class="text-light max-w-2xl mx-auto">
+        Nuestro servicio está diseñado para resolver tus problemas de gasfitería
+        de forma rápida y profesional.
+      </p>
+
       <div class="benefits-grid">
         <div class="benefit-card">
           <div class="benefit-icon">
-            <i class="ph ph-clock-counter-clockwise text-primary" aria-hidden="true"></i>
+            <i
+              class="ph ph-clock-counter-clockwise text-primary"
+              aria-hidden="true"></i>
           </div>
           <h3>Respuesta Inmediata en Juliaca</h3>
-          <p class="text-light">Atención inmediata las 24 horas para emergencias de gasfitería en Juliaca y alrededores. Llegamos rápido a cualquier punto de Juliaca llamando al {displayPhone}.</p>
+          <p class="text-light">
+            Atención inmediata las 24 horas para emergencias de gasfitería en
+            Juliaca y alrededores. Llegamos rápido a cualquier punto de Juliaca
+            llamando al {displayPhone}.
+          </p>
         </div>
-        
+
         <div class="benefit-card">
           <div class="benefit-icon">
             <i class="ph ph-shield-check text-primary" aria-hidden="true"></i>
           </div>
           <h3>Trabajo Profesional Garantizado</h3>
-          <p class="text-light">Técnicos certificados en Juliaca que garantizan un trabajo profesional y duradero en cada servicio.</p>
+          <p class="text-light">
+            Técnicos certificados en Juliaca que garantizan un trabajo
+            profesional y duradero en cada servicio.
+          </p>
         </div>
-        
+
         <div class="benefit-card">
           <div class="benefit-icon">
             <i class="ph ph-map-pin-line text-primary" aria-hidden="true"></i>
           </div>
           <h3>Gasfitería 24/7 en Juliaca</h3>
-          <p class="text-light">Especialistas locales en Juliaca con atención personalizada. Atendemos en toda la ciudad de Juliaca y Puno. WhatsApp: {displayPhone}.</p>
+          <p class="text-light">
+            Especialistas locales en Juliaca con atención personalizada.
+            Atendemos en toda la ciudad de Juliaca y Puno. WhatsApp: {
+              displayPhone
+            }.
+          </p>
         </div>
       </div>
     </div>
@@ -118,12 +148,20 @@ const faqSchema = {
     <div class="container">
       <div class="highlight-service-container">
         <div class="highlight-image">
-          <Image src={trampaGrasaImg} alt="Instalación de trampas de grasa en Juliaca" class="rounded-lg shadow-lg" />
+          <Image
+            src={trampaGrasaImg}
+            alt="Instalación de trampas de grasa en Juliaca"
+            class="rounded-lg shadow-lg"
+          />
         </div>
         <div class="highlight-content">
           <span class="badge">Nuevo Servicio Especializado</span>
           <h2 class="title-lg">Trampas de Grasa en Juliaca</h2>
-          <p class="text-light mb-6">Fabricación e instalación de trampas de grasas para viviendas y comercios en Juliaca. Cumple con las normativas locales y garantiza el correcto funcionamiento de tus desagües en Juliaca.</p>
+          <p class="text-light mb-6">
+            Fabricación e instalación de trampas de grasas para viviendas y
+            comercios en Juliaca. Cumple con las normativas locales y garantiza
+            el correcto funcionamiento de tus desagües en Juliaca.
+          </p>
           <div class="flex gap-4">
             <a href={`tel:+${phoneNumber}`} class="btn btn-secondary">
               Llamar al {displayPhone}
@@ -137,34 +175,45 @@ const faqSchema = {
   <!-- Services Grid Section -->
   <section id="servicios" class="section">
     <div class="container">
-      <h2 class="title-lg text-center">Nuestros Servicios de Gasfitería en Juliaca</h2>
-      <p class="text-light max-w-2xl mx-auto">Soluciones rápidas y efectivas para cualquier problema técnico en Juliaca. Llámanos al {displayPhone} para asistencia en Juliaca.</p>
-      
+      <h2 class="title-lg text-center">
+        Nuestros Servicios de Gasfitería en Juliaca
+      </h2>
+      <p class="text-light max-w-2xl mx-auto">
+        Soluciones rápidas y efectivas para cualquier problema técnico en
+        Juliaca. Llámanos al {displayPhone} para asistencia en Juliaca.
+      </p>
+
       <div class="services-compact-grid">
         <div class="service-item">
           <div class="service-icon">
             <i class="ph ph-drop-half-bottom" aria-hidden="true"></i>
           </div>
           <h4>Instalación de agua y desagüe</h4>
-          <p class="text-light">Redes de agua potable y sistemas de evacuación.</p>
+          <p class="text-light">
+            Redes de agua potable y sistemas de evacuación.
+          </p>
         </div>
-        
+
         <div class="service-item">
           <div class="service-icon">
             <i class="ph ph-shower" aria-hidden="true"></i>
           </div>
           <h4>Ducha y terma eléctrica</h4>
-          <p class="text-light">Instalación y mantenimiento de duchas y termas.</p>
+          <p class="text-light">
+            Instalación y mantenimiento de duchas y termas.
+          </p>
         </div>
-        
+
         <div class="service-item">
           <div class="service-icon">
             <i class="ph ph-waves" aria-hidden="true"></i>
           </div>
           <h4>Tanque y cisterna</h4>
-          <p class="text-light">Instalación garantizada de sistemas de almacenamiento.</p>
+          <p class="text-light">
+            Instalación garantizada de sistemas de almacenamiento.
+          </p>
         </div>
-        
+
         <div class="service-item">
           <div class="service-icon">
             <i class="ph ph-engine" aria-hidden="true"></i>
@@ -172,15 +221,17 @@ const faqSchema = {
           <h4>Electrobomba</h4>
           <p class="text-light">Sistemas de bombeo y presión constante.</p>
         </div>
-        
+
         <div class="service-item">
           <div class="service-icon">
             <i class="ph ph-thermometer-hot" aria-hidden="true"></i>
           </div>
           <h4>Agua fría y caliente</h4>
-          <p class="text-light">Instalaciones hidráulicas para agua fría y caliente.</p>
+          <p class="text-light">
+            Instalaciones hidráulicas para agua fría y caliente.
+          </p>
         </div>
-        
+
         <div class="service-item">
           <div class="service-icon">
             <i class="ph ph-gear-six" aria-hidden="true"></i>
@@ -188,15 +239,17 @@ const faqSchema = {
           <h4>Instalación de fluxómetros</h4>
           <p class="text-light">Especialistas en grifería de alta presión.</p>
         </div>
-        
+
         <div class="service-item">
           <div class="service-icon">
             <i class="ph ph-fire" aria-hidden="true"></i>
           </div>
           <h4>Sistemas de termofusión</h4>
-          <p class="text-light">Expertos en soldadura por termofusión para PPR.</p>
+          <p class="text-light">
+            Expertos en soldadura por termofusión para PPR.
+          </p>
         </div>
-        
+
         <div class="service-item">
           <div class="service-icon">
             <i class="ph ph-grid-four" aria-hidden="true"></i>
@@ -210,7 +263,9 @@ const faqSchema = {
             <i class="ph ph-file-text" aria-hidden="true"></i>
           </div>
           <h4>Planos y certificaciones</h4>
-          <p class="text-light">Elaboración de planos y certificados de operatividad.</p>
+          <p class="text-light">
+            Elaboración de planos y certificados de operatividad.
+          </p>
         </div>
 
         <div class="service-item">
@@ -218,56 +273,110 @@ const faqSchema = {
             <i class="ph ph-trend-down" aria-hidden="true"></i>
           </div>
           <h4>Excesos de consumo</h4>
-          <p class="text-light">Detección de fugas para reducir cobros excesivos.</p>
+          <p class="text-light">
+            Detección de fugas para reducir cobros excesivos.
+          </p>
         </div>
       </div>
     </div>
   </section>
 
   <!-- Final CTA -->
-  <section class="section bg-primary">
+  <section id="contacto" class="section final-cta">
     <div class="container">
-      <div class="text-center">
-        <h2 class="title-lg text-white mb-8">¿Necesitas un gasfiter en Juliaca ahora?</h2>
-        <p class="text-light max-w-2xl mx-auto mb-8">Atención inmediata en Juliaca y alrededores. Contacta al <strong>{displayPhone}</strong> para el mejor gasfitero de Juliaca.</p>
-        
+      <div class="cta-card animate-fade-in">
+        <h2 class="title-lg text-white mb-6">
+          ¿Necesitas un gasfitero en Juliaca ahora?
+        </h2>
+        <p class="cta-text max-w-2xl mx-auto mb-10">
+          Atención inmediata en <span class="highlight-yellow">Juliaca</span> y alrededores. Contacta al <strong
+            >{displayPhone}</strong
+          > para el mejor servicio técnico de gasfitería.
+        </p>
+
         <div class="final-contact-actions flex flex-col sm:flex-row gap-6">
-          <a 
-            href={`https://wa.me/${phoneNumber}?text=${encodeURIComponent(whatsappMessage)}`} 
-            target="_blank" 
-            rel="noopener noreferrer" 
+          <a
+            href={`https://wa.me/${phoneNumber}?text=${encodeURIComponent(
+              whatsappMessage
+            )}`}
+            target="_blank"
+            rel="noopener noreferrer"
             class="btn btn-whatsapp btn-lg w-full sm:w-1/2"
           >
+            <i class="ph ph-whatsapp-logo text-2xl"></i>
             Escribir al WhatsApp
           </a>
-          <a 
-            href={`tel:+${phoneNumber}`} 
+          <a
+            href={`tel:+${phoneNumber}`}
             class="btn btn-secondary btn-lg w-full sm:w-1/2"
           >
-            Teléfono: {displayPhone}
+            <i class="ph ph-phone text-2xl"></i>
+            Llamar: {displayPhone}
           </a>
         </div>
-        <p class="text-white mt-6 font-bold">Llámanos ahora en Juliaca al {displayPhone} - Gasfiteros Juliaca 24h</p>
+        <p class="cta-subtext mt-8">
+          <i class="ph ph-check-circle text-secondary"></i>
+          Atención 24/7 - Gasfiteros Profesionales en Juliaca
+        </p>
       </div>
     </div>
   </section>
+
   <!-- FAQ Section -->
   <section id="faq" class="section bg-subtle">
     <div class="container">
-      <h2 class="title-lg text-center">Preguntas Frecuentes sobre Gasfitería en Juliaca</h2>
-      <div class="faq-grid max-w-3xl mx-auto mt-12">
-        <div class="faq-item mb-8">
-          <h3 class="faq-question text-xl font-bold mb-3">¿Atienden emergencias de gasfitería las 24 horas en Juliaca?</h3>
-          <p class="text-light">Sí, brindamos servicio de gasfitería de emergencia las 24 horas del día, los 7 días de la semana en toda la ciudad de Juliaca y alrededores. Puede llamarnos al {displayPhone} en cualquier momento.</p>
-        </div>
-        <div class="faq-item mb-8">
-          <h3 class="faq-question text-xl font-bold mb-3">¿Qué servicios de gasfitería ofrecen en Juliaca?</h3>
-          <p class="text-light">Ofrecemos una amplia gama de servicios que incluyen detección de fugas, desatoro de desagües, instalación de termas (eléctricas y a gas), mantenimiento de electrobombas, instalaciones completas de agua y desagüe, y certificaciones técnicas.</p>
-        </div>
-        <div class="faq-item mb-8">
-          <h3 class="faq-question text-xl font-bold mb-3">¿Cuál es el tiempo de respuesta para un servicio en Juliaca?</h3>
-          <p class="text-light">Nuestro tiempo de respuesta promedio en Juliaca es de 20 a 40 minutos. Contamos con técnicos distribuidos estratégicamente en la ciudad para llegar lo más pronto posible a su hogar o empresa.</p>
-        </div>
+      <h2 class="title-lg text-center">
+        Preguntas Frecuentes sobre Gasfitería en Juliaca
+      </h2>
+      <div class="accordion max-w-3xl mx-auto mt-12">
+        <details class="accordion-item" open>
+          <summary class="accordion-header">
+            <h3>¿Atienden emergencias de gasfitería las 24 horas en Juliaca?</h3>
+            <div class="accordion-icon">
+              <i class="ph ph-caret-down"></i>
+            </div>
+          </summary>
+          <div class="accordion-content">
+            <p>
+              Sí, brindamos servicio de gasfitería de emergencia las 24 horas del
+              día, los 7 días de la semana en toda la ciudad de Juliaca y
+              alrededores. Puede llamarnos al <strong>{displayPhone}</strong> en cualquier momento. Estamos listos para atender fugas, roturas y desatoros urgentes.
+            </p>
+          </div>
+        </details>
+
+        <details class="accordion-item">
+          <summary class="accordion-header">
+            <h3>¿Qué servicios de gasfitería ofrecen en Juliaca?</h3>
+            <div class="accordion-icon">
+              <i class="ph ph-caret-down"></i>
+            </div>
+          </summary>
+          <div class="accordion-content">
+            <p>
+              Ofrecemos una amplia gama de servicios que incluyen detección de
+              fugas, desatoro de desagües con máquinas modernas, instalación de termas (eléctricas y a
+              gas), mantenimiento de electrobombas, instalaciones completas de
+              agua y desagüe, y certificaciones técnicas para comercios y viviendas.
+            </p>
+          </div>
+        </details>
+
+        <details class="accordion-item">
+          <summary class="accordion-header">
+            <h3>¿Cuál es el tiempo de respuesta para un servicio en Juliaca?</h3>
+            <div class="accordion-icon">
+              <i class="ph ph-caret-down"></i>
+            </div>
+          </summary>
+          <div class="accordion-content">
+            <p>
+              Nuestro tiempo de respuesta promedio en Juliaca es de <strong>20 a 40
+              minutos</strong>. Contamos con técnicos certificados distribuidos estratégicamente en la
+              ciudad para llegar lo más pronto posible a su hogar o empresa llamando al {displayPhone}.
+            </p>
+          </div>
+        </details>
       </div>
     </div>
   </section>
@@ -283,17 +392,23 @@ const faqSchema = {
     display: flex;
     align-items: center;
   }
-  
+
   .hero-bg {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background: linear-gradient(to right, rgba(15, 23, 42, 0.95), rgba(15, 23, 42, 0.8)), url('https://images.unsplash.com/photo-1585704032915-c3400ca199e7?q=80&w=2070&auto=format&fit=crop') center/cover;
+    background: linear-gradient(
+        to right,
+        rgba(15, 23, 42, 0.95),
+        rgba(15, 23, 42, 0.8)
+      ),
+      url("https://images.unsplash.com/photo-1585704032915-c3400ca199e7?q=80&w=2070&auto=format&fit=crop")
+        center/cover;
     z-index: -1;
   }
-  
+
   .hero-logo {
     position: absolute;
     top: 1rem;
@@ -303,13 +418,13 @@ const faqSchema = {
     opacity: 0.8;
     pointer-events: none;
   }
-  
+
   .hero-logo img {
     width: 100%;
     height: 100%;
     object-fit: contain;
   }
-  
+
   .hero-content {
     max-width: 800px;
     text-align: center;
@@ -319,25 +434,25 @@ const faqSchema = {
     flex-direction: column;
     align-items: center;
   }
-  
+
   .text-gradient {
-    background: linear-gradient(to right, #25D366, #128C7E);
+    background: linear-gradient(to right, #25d366, #128c7e);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
     color: transparent;
   }
-  
+
   .text-white {
     color: white;
   }
-  
+
   .btn-whatsapp {
-    background-color: #25D366;
+    background-color: #25d366;
     color: white;
     border: none;
   }
-  
+
   .btn-whatsapp:hover {
     background-color: #1eb959;
     transform: translateY(-4px) scale(1.02);
@@ -360,15 +475,14 @@ const faqSchema = {
     transform: translateY(-4px) scale(1.02);
     box-shadow: 0 12px 20px -8px rgba(245, 188, 24, 0.4);
   }
-  
+
   /* Removed unused outline styles as requested for solid high-contrast buttons */
-  
-  
+
   .hero-content {
     max-width: 800px;
     text-align: center;
   }
-  
+
   .badge {
     display: inline-block;
     background-color: rgba(245, 188, 24, 0.2);
@@ -380,17 +494,17 @@ const faqSchema = {
     margin-bottom: 1.5rem;
     border: 1px solid rgba(245, 188, 24, 0.4);
   }
-  
+
   h1 {
     font-size: clamp(3rem, 6vw, 4.5rem);
     color: white;
     margin-bottom: 1.5rem;
   }
-  
+
   .text-highlight {
     color: var(--color-primary);
   }
-  
+
   .hero-desc {
     font-size: 1.25rem;
     opacity: 0.9;
@@ -398,7 +512,7 @@ const faqSchema = {
     margin: 0 auto 2.5rem;
     line-height: 1.6;
   }
-  
+
   .contact-actions {
     display: flex;
     flex-direction: column;
@@ -406,7 +520,7 @@ const faqSchema = {
     align-items: center;
     margin-top: 2rem;
   }
-  
+
   .contact-wa,
   .contact-phone {
     display: flex;
@@ -414,7 +528,7 @@ const faqSchema = {
     justify-content: center;
     gap: 0.75rem;
   }
-  
+
   .display-phone {
     display: flex;
     align-items: center;
@@ -422,7 +536,7 @@ const faqSchema = {
     gap: 0.75rem;
     margin-bottom: 0.5rem;
   }
-  
+
   .contact-phone-sub {
     font-size: 1.1rem;
     color: white;
@@ -430,7 +544,7 @@ const faqSchema = {
     margin-top: 1rem;
     font-weight: 600;
   }
-  
+
   .btn-lg {
     padding: 1rem 1.5rem;
     font-size: clamp(0.9rem, 2.5vw, 1.125rem);
@@ -439,23 +553,23 @@ const faqSchema = {
     max-width: fit-content;
     white-space: nowrap;
   }
-  
+
   .border-white {
     border-color: rgba(255, 255, 255, 0.5);
   }
-  
+
   .border-white:hover {
     background-color: white;
     color: var(--color-text-dark);
   }
-  
+
   /* Benefits Section */
   .benefits-grid {
     display: grid;
     gap: 2rem;
     margin-top: 3rem;
   }
-  
+
   .benefit-card {
     background-color: white;
     padding: 2.5rem;
@@ -464,12 +578,12 @@ const faqSchema = {
     box-shadow: var(--shadow-sm);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
   }
-  
+
   .benefit-card:hover {
     transform: translateY(-5px);
     box-shadow: var(--shadow-md);
   }
-  
+
   .benefit-icon {
     width: 4rem;
     height: 4rem;
@@ -482,25 +596,25 @@ const faqSchema = {
     justify-content: center;
     font-size: 2rem;
   }
-  
+
   .benefit-card h3 {
     font-size: 1.25rem;
     margin: 1rem 0;
     color: var(--color-text-dark);
   }
-  
+
   .benefit-card p {
     color: var(--color-text-light);
     line-height: 1.6;
   }
-  
+
   /* Services Compact Grid */
   .services-compact-grid {
     display: grid;
     gap: 1.5rem;
     margin-top: 2rem;
   }
-  
+
   .service-item {
     background-color: white;
     padding: 1.5rem;
@@ -510,13 +624,13 @@ const faqSchema = {
     transition: transform 0.2s ease, box-shadow 0.2s ease;
     border: 1px solid var(--color-border);
   }
-  
+
   .service-item:hover {
     transform: translateY(-3px);
     box-shadow: var(--shadow-md);
     border-color: var(--color-secondary);
   }
-  
+
   .service-icon {
     width: 3rem;
     height: 3rem;
@@ -529,70 +643,70 @@ const faqSchema = {
     justify-content: center;
     font-size: 1.5rem;
   }
-  
+
   .service-item h4 {
     font-size: 1.1rem;
     margin: 0.5rem 0;
     color: var(--color-text-dark);
   }
-  
+
   .service-item p {
     font-size: 0.9rem;
     color: var(--color-text-light);
     line-height: 1.4;
     margin: 0;
   }
-  
+
   /* Responsive adjustments */
   @media (min-width: 768px) {
     .benefits-grid {
       grid-template-columns: repeat(3, 1fr);
     }
-    
+
     .services-compact-grid {
       grid-template-columns: repeat(4, 1fr);
     }
-    
+
     .final-contact-actions {
       flex-direction: row;
       gap: 1.5rem;
       justify-content: center;
     }
-    
+
     .hero-content {
       text-align: left;
     }
-    
+
     .contact-actions {
       align-items: stretch;
     }
   }
-  
+
   @media (max-width: 767px) {
     .benefits-grid {
       grid-template-columns: 1fr;
     }
-    
+
     .services-compact-grid {
       grid-template-columns: repeat(2, 1fr);
     }
-    
+
     .final-contact-actions {
       flex-direction: column;
       gap: 1.5rem;
       align-items: center;
       width: 100%;
     }
-    
+
     .services-compact-grid {
       grid-template-columns: 1fr;
     }
-    
+
     .hero {
       padding: 6rem 0;
       min-height: 80vh;
     }
-    
+
     .hero-logo {
       top: 0.5rem;
       left: 0.5rem;
@@ -638,5 +752,128 @@ const faqSchema = {
 
   .highlight-content {
     flex: 1;
+  }
+
+  /* Final CTA Section Styles */
+  .final-cta {
+    background: linear-gradient(rgba(15, 23, 42, 0.9), rgba(15, 23, 42, 0.9)),
+      url("https://images.unsplash.com/photo-1504148455328-c376907d081c?q=80&w=2070&auto=format&fit=crop")
+        center/cover;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .cta-card {
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 4rem 2rem;
+    border-radius: var(--radius-lg);
+    text-align: center;
+    max-width: 900px;
+    margin: 0 auto;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+  }
+
+  .cta-text {
+    font-size: 1.25rem;
+    color: rgba(255, 255, 255, 0.9);
+    line-height: 1.6;
+  }
+
+  .highlight-yellow {
+    color: var(--color-secondary);
+    font-weight: 700;
+  }
+
+  .cta-subtext {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    color: white;
+    font-weight: 500;
+    font-size: 1rem;
+    opacity: 0.8;
+  }
+
+  /* FAQ Accordion Styles */
+  .accordion {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .accordion-item {
+    background: white;
+    border-radius: var(--radius-md);
+    border: 1px solid var(--color-border);
+    overflow: hidden;
+    transition: all 0.3s ease;
+  }
+
+  .accordion-item[open] {
+    border-color: var(--color-primary);
+    box-shadow: var(--shadow-md);
+  }
+
+  .accordion-header {
+    padding: 1.5rem;
+    cursor: pointer;
+    list-style: none;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    user-select: none;
+  }
+
+  .accordion-header::-webkit-details-marker {
+    display: none;
+  }
+
+  .accordion-header h3 {
+    font-size: 1.125rem;
+    margin: 0;
+    color: var(--color-text-dark);
+    flex: 1;
+  }
+
+  .accordion-icon {
+    width: 2rem;
+    height: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--color-bg-subtle);
+    border-radius: 50%;
+    color: var(--color-primary);
+    transition: transform 0.3s ease;
+  }
+
+  .accordion-item[open] .accordion-icon {
+    transform: rotate(180deg);
+  }
+
+  .accordion-content {
+    padding: 0 1.5rem 1.5rem;
+    color: var(--color-text-light);
+    line-height: 1.6;
+    animation: slideDown 0.3s ease-out;
+  }
+
+  @keyframes slideDown {
+    from {
+      opacity: 0;
+      transform: translateY(-10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .accordion-item:hover {
+    border-color: var(--color-primary);
   }
 </style>
