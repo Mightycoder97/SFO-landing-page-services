@@ -18,11 +18,11 @@ const whatsappMessage = "Hola! Vengo de la página web y necesito un servicio de
     <div class="container hero-content animate-fade-in">
       <span class="badge">Servicio 24/7 en Juliaca y Todo el Perú</span>
       <h1>
-        <span class="text-white">Servicio de Gasfitería </span>
-        <span class="text-gradient">Inmediato</span>
-        <span class="text-white"> en Juliaca</span>
+        <span class="text-white">Gasfitería en </span>
+        <span class="text-gradient">Juliaca</span>
+        <span class="text-white"> Servicio Inmediato</span>
       </h1>
-      <p class="hero-desc">Atención inmediata para emergencias de gasfitería. Trabajo profesional garantizado. Aliviamos tu emergencia rápidamente.</p>
+      <p class="hero-desc">Los mejores gasfiteros en Juliaca para atender tus emergencias las 24 horas. Llama ahora al <strong>{displayPhone}</strong> para el mejor servicio técnico de Juliaca.</p>
       
       <!-- Contact Buttons -->
       <div class="contact-actions">
@@ -32,16 +32,15 @@ const whatsappMessage = "Hola! Vengo de la página web y necesito un servicio de
           rel="noopener noreferrer" 
           class="btn btn-whatsapp btn-lg contact-wa"
         >
-          <i class="ph ph-whatsapp-logo whatsapp-icon"></i>
-          Contactar por WhatsApp
+          Escribir al WhatsApp
         </a>
         <a 
           href={`tel:+${phoneNumber}`} 
-          class="btn btn-outline btn-lg text-white border-white contact-phone"
+          class="btn btn-secondary btn-lg contact-phone"
         >
-          <i class="ph ph-phone"></i>
-          Llamar Ahora
+          Teléfono: {displayPhone}
         </a>
+        <p class="contact-phone-sub">Atención en todo Juliaca: {displayPhone}</p>
       </div>
     </div>
   </section>
@@ -57,8 +56,8 @@ const whatsappMessage = "Hola! Vengo de la página web y necesito un servicio de
           <div class="benefit-icon">
             <i class="ph ph-clock-counter-clockwise text-primary"></i>
           </div>
-          <h3>Respuesta Inmediata</h3>
-          <p class="text-light">Atención inmediata las 24 horas para emergencias de gasfitería en Juliaca. Llegamos rápido para aliviar tu situación.</p>
+          <h3>Respuesta Inmediata en Juliaca</h3>
+          <p class="text-light">Atención inmediata las 24 horas para emergencias de gasfitería en Juliaca y alrededores. Llegamos rápido a cualquier punto de Juliaca llamando al {displayPhone}.</p>
         </div>
         
         <div class="benefit-card">
@@ -73,8 +72,29 @@ const whatsappMessage = "Hola! Vengo de la página web y necesito un servicio de
           <div class="benefit-icon">
             <i class="ph ph-map-pin-line text-primary"></i>
           </div>
-          <h3>Especialistas en Juliaca</h3>
-          <p class="text-light">Servicio de gasfitería local en Juliaca con conocimiento específico de la zona y atención personalizada para emergencias.</p>
+          <h3>Gasfitería 24/7 en Juliaca</h3>
+          <p class="text-light">Especialistas locales en Juliaca con atención personalizada. Atendemos en toda la ciudad de Juliaca y Puno. WhatsApp: {displayPhone}.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Highlighted Service: Trampa de Grasas -->
+  <section class="section bg-white overflow-hidden">
+    <div class="container">
+      <div class="highlight-service-container">
+        <div class="highlight-image">
+          <img src="/img/trampa_grasa.jpeg" alt="Instalación de trampas de grasa en Juliaca" class="rounded-lg shadow-lg" />
+        </div>
+        <div class="highlight-content">
+          <span class="badge">Nuevo Servicio Especializado</span>
+          <h2 class="title-lg">Trampas de Grasa en Juliaca</h2>
+          <p class="text-light mb-6">Fabricación e instalación de trampas de grasas para viviendas y comercios en Juliaca. Cumple con las normativas locales y garantiza el correcto funcionamiento de tus desagües en Juliaca.</p>
+          <div class="flex gap-4">
+            <a href={`tel:+${phoneNumber}`} class="btn btn-secondary">
+              Llamar al {displayPhone}
+            </a>
+          </div>
         </div>
       </div>
     </div>
@@ -83,8 +103,8 @@ const whatsappMessage = "Hola! Vengo de la página web y necesito un servicio de
   <!-- Services Grid Section -->
   <section class="section">
     <div class="container">
-      <h2 class="title-lg text-center">Nuestros Servicios</h2>
-      <p class="text-light max-w-2xl mx-auto">Soluciones rápidas y efectivas para cualquier problema de gasfitería en Juliaca.</p>
+      <h2 class="title-lg text-center">Nuestros Servicios de Gasfitería en Juliaca</h2>
+      <p class="text-light max-w-2xl mx-auto">Soluciones rápidas y efectivas para cualquier problema técnico en Juliaca. Llámanos al {displayPhone} para asistencia en Juliaca.</p>
       
       <div class="services-compact-grid">
         <div class="service-item">
@@ -174,8 +194,8 @@ const whatsappMessage = "Hola! Vengo de la página web y necesito un servicio de
   <section class="section bg-primary">
     <div class="container">
       <div class="text-center">
-        <h2 class="title-lg text-white mb-8">¿Listo para solucionar tu problema de gasfitería?</h2>
-        <p class="text-light max-w-2xl mx-auto mb-8">No esperes más, contáctanos ahora y recibe atención inmediata.</p>
+        <h2 class="title-lg text-white mb-8">¿Necesitas un gasfiter en Juliaca ahora?</h2>
+        <p class="text-light max-w-2xl mx-auto mb-8">Atención inmediata en Juliaca y alrededores. Contacta al <strong>{displayPhone}</strong> para el mejor gasfitero de Juliaca.</p>
         
         <div class="final-contact-actions flex flex-col sm:flex-row gap-6">
           <a 
@@ -184,17 +204,16 @@ const whatsappMessage = "Hola! Vengo de la página web y necesito un servicio de
             rel="noopener noreferrer" 
             class="btn btn-whatsapp btn-lg w-full sm:w-1/2"
           >
-            <i class="ph ph-whatsapp-logo"></i>
-            Escribir por WhatsApp
+            Escribir al WhatsApp
           </a>
           <a 
             href={`tel:+${phoneNumber}`} 
-            class="btn btn-outline-yellow btn-lg w-full sm:w-1/2"
+            class="btn btn-secondary btn-lg w-full sm:w-1/2"
           >
-            <i class="ph ph-phone"></i>
-            Llamar Ahora
+            Teléfono: {displayPhone}
           </a>
         </div>
+        <p class="text-white mt-6 font-bold">Llámanos ahora en Juliaca al {displayPhone} - Gasfiteros Juliaca 24h</p>
       </div>
     </div>
   </section>
@@ -241,6 +260,10 @@ const whatsappMessage = "Hola! Vengo de la página web y necesito un servicio de
     max-width: 800px;
     text-align: center;
     padding: 0 1rem;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
   
   .text-gradient {
@@ -258,24 +281,33 @@ const whatsappMessage = "Hola! Vengo de la página web y necesito un servicio de
   .btn-whatsapp {
     background-color: #25D366;
     color: white;
+    border: none;
   }
   
   .btn-whatsapp:hover {
-    background-color: #128C7E;
-    transform: translateY(-2px);
-    box-shadow: var(--shadow-md);
+    background-color: #1eb959;
+    transform: translateY(-4px) scale(1.02);
+    box-shadow: 0 12px 20px -8px rgba(37, 211, 102, 0.4);
   }
-  
-  .btn-outline-yellow {
-    background-color: transparent;
-    color: var(--color-secondary);
-    border: 2px solid var(--color-secondary);
+
+  /* Enhancing global btn transitions for the striking hover effect */
+  .btn {
+    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
   }
-  
-  .btn-outline-yellow:hover {
+
+  .btn-secondary {
     background-color: var(--color-secondary);
     color: white;
+    border: none;
   }
+
+  .btn-secondary:hover {
+    background-color: var(--color-secondary-hover);
+    transform: translateY(-4px) scale(1.02);
+    box-shadow: 0 12px 20px -8px rgba(245, 188, 24, 0.4);
+  }
+  
+  /* Removed unused outline styles as requested for solid high-contrast buttons */
   
   .whatsapp-icon {
     font-size: 1.5rem;
@@ -333,16 +365,28 @@ const whatsappMessage = "Hola! Vengo de la página web y necesito un servicio de
   }
   
   .display-phone {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.75rem;
+    margin-bottom: 0.5rem;
+  }
+  
+  .contact-phone-sub {
+    font-size: 1.1rem;
+    color: white;
+    opacity: 0.9;
+    margin-top: 1rem;
     font-weight: 600;
-    letter-spacing: 0.5px;
   }
   
   .btn-lg {
-    padding: 1rem 2rem;
-    font-size: 1.125rem;
-    font-weight: 600;
-    width: 100%;
-    max-width: 300px;
+    padding: 1rem 1.5rem;
+    font-size: clamp(0.9rem, 2.5vw, 1.125rem);
+    font-weight: 700;
+    width: auto;
+    max-width: fit-content;
+    white-space: nowrap;
   }
   
   .border-white {
@@ -520,15 +564,17 @@ const whatsappMessage = "Hola! Vengo de la página web y necesito un servicio de
   .final-contact-actions {
     display: flex;
     flex-direction: column;
-    gap: 2rem;
-    margin-top: 3rem;
+    gap: 1.5rem;
+    margin-top: 2.5rem;
     align-items: center;
   }
   
   .final-contact-actions .btn-lg {
     padding: 1.25rem 2rem;
-    font-size: 1.125rem;
-    font-weight: 600;
+    font-size: clamp(1rem, 3vw, 1.25rem);
+    font-weight: 700;
+    white-space: nowrap;
+    width: auto;
   }
   
   /* Responsive adjustments */
@@ -573,6 +619,11 @@ const whatsappMessage = "Hola! Vengo de la página web y necesito un servicio de
       flex-direction: column;
       gap: 1.5rem;
       align-items: center;
+      width: 100%;
+    }
+    
+    .services-compact-grid {
+      grid-template-columns: 1fr;
     }
     
     .hero {
@@ -586,5 +637,44 @@ const whatsappMessage = "Hola! Vengo de la página web y necesito un servicio de
       width: 30px;
       height: 30px;
     }
+
+    .highlight-service-container {
+      flex-direction: column;
+      text-align: center;
+      gap: 2rem;
+    }
+
+    .highlight-image img {
+      max-width: 100%;
+    }
+  }
+
+  /* Highlight Section Styles */
+  .highlight-service-container {
+    display: flex;
+    align-items: center;
+    gap: 4rem;
+    margin: 2rem 0;
+    padding: 2rem;
+    background: #f8fafc;
+    border-radius: var(--radius-lg);
+    border: 2px solid var(--color-secondary);
+  }
+
+  .highlight-image {
+    flex: 1;
+  }
+
+  .highlight-image img {
+    width: 100%;
+    max-width: 500px;
+    height: auto;
+    object-fit: cover;
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-lg);
+  }
+
+  .highlight-content {
+    flex: 1;
   }
 </style>

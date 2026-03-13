@@ -30,6 +30,7 @@
 }
 
 html {
+  font-size: 120%;
   font-family: var(--font-body);
   color: var(--color-text-dark);
   background-color: var(--color-bg-light);
