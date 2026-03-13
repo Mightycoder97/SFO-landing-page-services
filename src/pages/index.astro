@@ -1,10 +1,43 @@
 ---
+import { Image } from 'astro:assets';
 import Layout from '../layouts/Layout.astro';
 import FloatingContact from '../components/FloatingContact.astro';
+import trampaGrasaImg from '../assets/img/trampa_grasa.jpeg';
 
 const phoneNumber = "51907526005";
 const displayPhone = "+51 907 526 005";
 const whatsappMessage = "Hola! Vengo de la página web y necesito un servicio de gasfitería.";
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "¿Atienden emergencias de gasfitería las 24 horas en Juliaca?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Sí, brindamos servicio de gasfitería de emergencia las 24 horas del día, los 7 días de la semana en toda la ciudad de Juliaca y alrededores."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Qué servicios de gasfitería ofrecen en Juliaca?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Ofrecemos una amplia gama de servicios que incluyen detección de fugas, desatoro de desagües, instalación de termas, mantenimiento de electrobombas, instalaciones de agua y desagüe, y más."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Cuál es el tiempo de respuesta para un servicio en Juliaca?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Nuestro tiempo de respuesta promedio en Juliaca es de 20 a 40 minutos, dependiendo de su ubicación exacta."
+      }
+    }
+  ]
+};
 ---
 
 <Layout 
@@ -12,6 +45,7 @@ const whatsappMessage = "Hola! Vengo de la página web y necesito un servicio de
   description="Gasfitero en Juliaca con atención inmediata para emergencias. Servicio profesional garantizado. Contáctanos ahora por WhatsApp o teléfono."
   hideHeader
 >
+  <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} slot="head" />
   <!-- Hero Section -->
   <section class="hero">
     <div class="hero-bg"></div>
@@ -46,7 +80,7 @@ const whatsappMessage = "Hola! Vengo de la página web y necesito un servicio de
   </section>
 
   <!-- Benefits Section -->
-  <section class="section bg-subtle">
+  <section id="beneficios" class="section bg-subtle">
     <div class="container">
       <h2 class="title-lg text-center">¿Por qué contactarnos?</h2>
       <p class="text-light max-w-2xl mx-auto">Nuestro servicio está diseñado para resolver tus problemas de gasfitería de forma rápida y profesional.</p>
@@ -54,7 +88,7 @@ const whatsappMessage = "Hola! Vengo de la página web y necesito un servicio de
       <div class="benefits-grid">
         <div class="benefit-card">
           <div class="benefit-icon">
-            <i class="ph ph-clock-counter-clockwise text-primary"></i>
+            <i class="ph ph-clock-counter-clockwise text-primary" aria-hidden="true"></i>
           </div>
           <h3>Respuesta Inmediata en Juliaca</h3>
           <p class="text-light">Atención inmediata las 24 horas para emergencias de gasfitería en Juliaca y alrededores. Llegamos rápido a cualquier punto de Juliaca llamando al {displayPhone}.</p>
@@ -62,7 +96,7 @@ const whatsappMessage = "Hola! Vengo de la página web y necesito un servicio de
         
         <div class="benefit-card">
           <div class="benefit-icon">
-            <i class="ph ph-shield-check text-primary"></i>
+            <i class="ph ph-shield-check text-primary" aria-hidden="true"></i>
           </div>
           <h3>Trabajo Profesional Garantizado</h3>
           <p class="text-light">Técnicos certificados en Juliaca que garantizan un trabajo profesional y duradero en cada servicio.</p>
@@ -70,7 +104,7 @@ const whatsappMessage = "Hola! Vengo de la página web y necesito un servicio de
         
         <div class="benefit-card">
           <div class="benefit-icon">
-            <i class="ph ph-map-pin-line text-primary"></i>
+            <i class="ph ph-map-pin-line text-primary" aria-hidden="true"></i>
           </div>
           <h3>Gasfitería 24/7 en Juliaca</h3>
           <p class="text-light">Especialistas locales en Juliaca con atención personalizada. Atendemos en toda la ciudad de Juliaca y Puno. WhatsApp: {displayPhone}.</p>
@@ -84,7 +118,7 @@ const whatsappMessage = "Hola! Vengo de la página web y necesito un servicio de
     <div class="container">
       <div class="highlight-service-container">
         <div class="highlight-image">
-          <img src="/img/trampa_grasa.jpeg" alt="Instalación de trampas de grasa en Juliaca" class="rounded-lg shadow-lg" />
+          <Image src={trampaGrasaImg} alt="Instalación de trampas de grasa en Juliaca" class="rounded-lg shadow-lg" />
         </div>
         <div class="highlight-content">
           <span class="badge">Nuevo Servicio Especializado</span>
@@ -101,7 +135,7 @@ const whatsappMessage = "Hola! Vengo de la página web y necesito un servicio de
   </section>
 
   <!-- Services Grid Section -->
-  <section class="section">
+  <section id="servicios" class="section">
     <div class="container">
       <h2 class="title-lg text-center">Nuestros Servicios de Gasfitería en Juliaca</h2>
       <p class="text-light max-w-2xl mx-auto">Soluciones rápidas y efectivas para cualquier problema técnico en Juliaca. Llámanos al {displayPhone} para asistencia en Juliaca.</p>
@@ -109,7 +143,7 @@ const whatsappMessage = "Hola! Vengo de la página web y necesito un servicio de
       <div class="services-compact-grid">
         <div class="service-item">
           <div class="service-icon">
-            <i class="ph ph-drop-half-bottom"></i>
+            <i class="ph ph-drop-half-bottom" aria-hidden="true"></i>
           </div>
           <h4>Instalación de agua y desagüe</h4>
           <p class="text-light">Redes de agua potable y sistemas de evacuación.</p>
@@ -117,7 +151,7 @@ const whatsappMessage = "Hola! Vengo de la página web y necesito un servicio de
         
         <div class="service-item">
           <div class="service-icon">
-            <i class="ph ph-shower"></i>
+            <i class="ph ph-shower" aria-hidden="true"></i>
           </div>
           <h4>Ducha y terma eléctrica</h4>
           <p class="text-light">Instalación y mantenimiento de duchas y termas.</p>
@@ -125,7 +159,7 @@ const whatsappMessage = "Hola! Vengo de la página web y necesito un servicio de
         
         <div class="service-item">
           <div class="service-icon">
-            <i class="ph ph-waves"></i>
+            <i class="ph ph-waves" aria-hidden="true"></i>
           </div>
           <h4>Tanque y cisterna</h4>
           <p class="text-light">Instalación garantizada de sistemas de almacenamiento.</p>
@@ -133,7 +167,7 @@ const whatsappMessage = "Hola! Vengo de la página web y necesito un servicio de
         
         <div class="service-item">
           <div class="service-icon">
-            <i class="ph ph-engine"></i>
+            <i class="ph ph-engine" aria-hidden="true"></i>
           </div>
           <h4>Electrobomba</h4>
           <p class="text-light">Sistemas de bombeo y presión constante.</p>
@@ -141,7 +175,7 @@ const whatsappMessage = "Hola! Vengo de la página web y necesito un servicio de
         
         <div class="service-item">
           <div class="service-icon">
-            <i class="ph ph-thermometer-hot"></i>
+            <i class="ph ph-thermometer-hot" aria-hidden="true"></i>
           </div>
           <h4>Agua fría y caliente</h4>
           <p class="text-light">Instalaciones hidráulicas para agua fría y caliente.</p>
@@ -149,7 +183,7 @@ const whatsappMessage = "Hola! Vengo de la página web y necesito un servicio de
         
         <div class="service-item">
           <div class="service-icon">
-            <i class="ph ph-gear-six"></i>
+            <i class="ph ph-gear-six" aria-hidden="true"></i>
           </div>
           <h4>Instalación de fluxómetros</h4>
           <p class="text-light">Especialistas en grifería de alta presión.</p>
@@ -157,7 +191,7 @@ const whatsappMessage = "Hola! Vengo de la página web y necesito un servicio de
         
         <div class="service-item">
           <div class="service-icon">
-            <i class="ph ph-fire"></i>
+            <i class="ph ph-fire" aria-hidden="true"></i>
           </div>
           <h4>Sistemas de termofusión</h4>
           <p class="text-light">Expertos en soldadura por termofusión para PPR.</p>
@@ -165,7 +199,7 @@ const whatsappMessage = "Hola! Vengo de la página web y necesito un servicio de
         
         <div class="service-item">
           <div class="service-icon">
-            <i class="ph ph-grid-four"></i>
+            <i class="ph ph-grid-four" aria-hidden="true"></i>
           </div>
           <h4>Porcelanato y cerámica</h4>
           <p class="text-light">Enchapados profesionales en baños y cocinas.</p>
@@ -173,7 +207,7 @@ const whatsappMessage = "Hola! Vengo de la página web y necesito un servicio de
 
         <div class="service-item">
           <div class="service-icon">
-            <i class="ph ph-file-text"></i>
+            <i class="ph ph-file-text" aria-hidden="true"></i>
           </div>
           <h4>Planos y certificaciones</h4>
           <p class="text-light">Elaboración de planos y certificados de operatividad.</p>
@@ -181,7 +215,7 @@ const whatsappMessage = "Hola! Vengo de la página web y necesito un servicio de
 
         <div class="service-item">
           <div class="service-icon">
-            <i class="ph ph-trend-down"></i>
+            <i class="ph ph-trend-down" aria-hidden="true"></i>
           </div>
           <h4>Excesos de consumo</h4>
           <p class="text-light">Detección de fugas para reducir cobros excesivos.</p>
@@ -214,6 +248,26 @@ const whatsappMessage = "Hola! Vengo de la página web y necesito un servicio de
           </a>
         </div>
         <p class="text-white mt-6 font-bold">Llámanos ahora en Juliaca al {displayPhone} - Gasfiteros Juliaca 24h</p>
+      </div>
+    </div>
+  </section>
+  <!-- FAQ Section -->
+  <section id="faq" class="section bg-subtle">
+    <div class="container">
+      <h2 class="title-lg text-center">Preguntas Frecuentes sobre Gasfitería en Juliaca</h2>
+      <div class="faq-grid max-w-3xl mx-auto mt-12">
+        <div class="faq-item mb-8">
+          <h3 class="faq-question text-xl font-bold mb-3">¿Atienden emergencias de gasfitería las 24 horas en Juliaca?</h3>
+          <p class="text-light">Sí, brindamos servicio de gasfitería de emergencia las 24 horas del día, los 7 días de la semana en toda la ciudad de Juliaca y alrededores. Puede llamarnos al {displayPhone} en cualquier momento.</p>
+        </div>
+        <div class="faq-item mb-8">
+          <h3 class="faq-question text-xl font-bold mb-3">¿Qué servicios de gasfitería ofrecen en Juliaca?</h3>
+          <p class="text-light">Ofrecemos una amplia gama de servicios que incluyen detección de fugas, desatoro de desagües, instalación de termas (eléctricas y a gas), mantenimiento de electrobombas, instalaciones completas de agua y desagüe, y certificaciones técnicas.</p>
+        </div>
+        <div class="faq-item mb-8">
+          <h3 class="faq-question text-xl font-bold mb-3">¿Cuál es el tiempo de respuesta para un servicio en Juliaca?</h3>
+          <p class="text-light">Nuestro tiempo de respuesta promedio en Juliaca es de 20 a 40 minutos. Contamos con técnicos distribuidos estratégicamente en la ciudad para llegar lo más pronto posible a su hogar o empresa.</p>
+        </div>
       </div>
     </div>
   </section>
@@ -309,9 +363,6 @@ const whatsappMessage = "Hola! Vengo de la página web y necesito un servicio de
   
   /* Removed unused outline styles as requested for solid high-contrast buttons */
   
-  .whatsapp-icon {
-    font-size: 1.5rem;
-  }
   
   .hero-content {
     max-width: 800px;
@@ -492,91 +543,6 @@ const whatsappMessage = "Hola! Vengo de la página web y necesito un servicio de
     margin: 0;
   }
   
-  /* Final CTA Section */
-  .section.bg-primary {
-    background: var(--color-primary);
-    background: linear-gradient(to right, var(--color-primary), #1a365d);
-    text-align: center;
-    min-height: 20vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-  }
-  
-  .section.bg-primary h2 {
-    color: white;
-    margin-bottom: 1.5rem;
-  }
-  
-  .section.bg-primary p {
-    color: rgba(255, 255, 255, 0.9);
-    max-width: 500px;
-    margin: 0 auto 2rem;
-  }
-  
-  .whatsapp-icon {
-    font-size: 1.5rem;
-  }
-  
-  .service-item {
-    background-color: white;
-    padding: 1.5rem;
-    border-radius: var(--radius-md);
-    text-align: center;
-    box-shadow: var(--shadow-sm);
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
-    border: 1px solid var(--color-border);
-  }
-  
-  .service-item:hover {
-    transform: translateY(-3px);
-    box-shadow: var(--shadow-md);
-    border-color: var(--color-secondary);
-  }
-  
-  .service-icon {
-    width: 3rem;
-    height: 3rem;
-    margin: 0 auto 1rem;
-    background-color: rgba(63, 87, 181, 0.1);
-    color: var(--color-secondary);
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 1.5rem;
-  }
-  
-  .service-item h4 {
-    font-size: 1.1rem;
-    margin: 0.5rem 0;
-    color: var(--color-text-dark);
-  }
-  
-  .service-item p {
-    font-size: 0.9rem;
-    color: var(--color-text-light);
-    line-height: 1.4;
-    margin: 0;
-  }
-  
-  /* Final CTA Section */
-  .final-contact-actions {
-    display: flex;
-    flex-direction: column;
-    gap: 1.5rem;
-    margin-top: 2.5rem;
-    align-items: center;
-  }
-  
-  .final-contact-actions .btn-lg {
-    padding: 1.25rem 2rem;
-    font-size: clamp(1rem, 3vw, 1.25rem);
-    font-weight: 700;
-    white-space: nowrap;
-    width: auto;
-  }
-  
   /* Responsive adjustments */
   @media (min-width: 768px) {
     .benefits-grid {
@@ -591,10 +557,6 @@ const whatsappMessage = "Hola! Vengo de la página web y necesito un servicio de
       flex-direction: row;
       gap: 1.5rem;
       justify-content: center;
-    }
-    
-    .final-contact-actions .btn-lg {
-      /* Remove flex: 1 to prevent stretching, let buttons size to content */
     }
     
     .hero-content {

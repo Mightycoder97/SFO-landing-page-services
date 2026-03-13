@@ -1,4 +1,7 @@
 ---
+import { Image } from 'astro:assets';
+import logoImg from '../assets/img/logo-3.png';
+
 const pathname = new URL(Astro.request.url).pathname;
 const currentPath = pathname.replace(/\/$/, '');
 ---
@@ -6,19 +9,19 @@ const currentPath = pathname.replace(/\/$/, '');
 <header class="header">
   <div class="container header-inner">
     <a href="/" class="logo">
-      <img src="/img/logo-3.png" alt="Gasfitero en Juliaca Logo" class="logo-img" />
+      <Image src={logoImg} alt="Gasfitero en Juliaca Logo" class="logo-img" />
     </a>
 
     <button id="mobile-menu-btn" class="mobile-menu-btn" aria-label="Abrir menú">
-      <i class="ph ph-list"></i>
+      <i class="ph ph-list" aria-hidden="true"></i>
     </button>
 
     <nav id="nav-menu" class="nav-menu">
       <ul class="nav-links">
         <li><a href="/" class={currentPath === '' ? 'active' : ''}>Inicio</a></li>
-        <li><a href="/servicios" class={currentPath === '/servicios' ? 'active' : ''}>Servicios</a></li>
-        <li><a href="/cobertura" class={currentPath === '/cobertura' ? 'active' : ''}>Cobertura en Juliaca</a></li>
-        <li><a href="/contacto" class={currentPath === '/contacto' ? 'active' : ''}>Contacto</a></li>
+        <li><a href="/#servicios">Servicios</a></li>
+        <li><a href="/#beneficios">¿Por qué nosotros?</a></li>
+        <li><a href="/#faq">Preguntas Frecuentes</a></li>
       </ul>
       <a href="/contacto" class="btn btn-primary cta-btn">
         <i class="ph ph-phone"></i>

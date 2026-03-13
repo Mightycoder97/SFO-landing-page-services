@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+/* Using local @fontsource fonts instead of Google Fonts for performance */
 
 :root {
   --color-primary: #3F57B5;
@@ -123,7 +123,7 @@ h3 { font-size: clamp(1.5rem, 3vw, 2rem); }
 
 .btn-secondary {
   background-color: var(--color-secondary);
-  color: white;
+  color: var(--color-text-dark);
 }
 
 .btn-secondary:hover {
